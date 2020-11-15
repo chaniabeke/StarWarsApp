@@ -39,7 +39,11 @@
         android:id="@+id/character_itemFragment"
         android:name="android.example.starwars.fragments.CharacterItemFragment"
         android:label="Character"
-        tools:layout="@layout/fragment_character_item" />
+        tools:layout="@layout/fragment_character_item" >
+        <argument
+            android:name="selectedCharacter"
+            app:argType="android.example.starwars.properties.CharacterFields" />
+    </fragment>
     <fragment
         android:id="@+id/charactersFragment"
         android:name="android.example.starwars.fragments.CharactersFragment"

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="character"
+            type="android.example.starwars.properties.CharacterFields" />
+    </data>
+    <TextView
+        android:id="@+id/textview_character_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@{character.name}" />
+</layout>

@@ -28,8 +28,13 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
 
         binding.viewModel = viewModel
 
-        binding.characterRecyclerview.adapter = CharacterAdapter(CharacterAdapter.OnClickListener {
+        val adapter = CharacterAdapter(CharacterAdapter.OnClickListener {
             viewModel.displayPropertyDetails(it)
+        })
+        binding.characterRecyclerview.adapter = adapter
+
+        viewModel.characters.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it)
         })
 
         viewModel.navigateToSelectedFields.observe(viewLifecycleOwner, Observer {

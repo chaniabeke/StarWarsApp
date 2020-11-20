@@ -2,7 +2,6 @@ package android.example.starwars.adapters
 
 import android.example.starwars.databinding.RecyclerviewItemCharacterBinding
 import android.example.starwars.properties.CharacterFields
-import android.example.starwars.properties.GetCharactersApiModel
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -11,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 
 class CharacterAdapter(val onClickListener: OnClickListener) :
-    ListAdapter<GetCharactersApiModel, CharacterAdapter.CharacterViewHolder>(DiffCallback) {
+    ListAdapter<CharacterFields, CharacterAdapter.CharacterViewHolder>(DiffCallback) {
 
     /**var characterList = List<CharacterFields>()
 
@@ -25,24 +24,23 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(characterFields: CharacterFields) {
             binding.character = characterFields
-            binding.executePendingBindings()
 
         }
     }
 
-    companion object DiffCallback : DiffUtil.ItemCallback<GetCharactersApiModel>() {
+    companion object DiffCallback : DiffUtil.ItemCallback<CharacterFields>() {
         override fun areItemsTheSame(
-            oldItem: GetCharactersApiModel,
-            newItem: GetCharactersApiModel
+            oldItem: CharacterFields,
+            newItem: CharacterFields
         ): Boolean {
             return oldItem === newItem
         }
 
         override fun areContentsTheSame(
-            oldItem: GetCharactersApiModel,
-            newItem: GetCharactersApiModel
+            oldItem: CharacterFields,
+            newItem: CharacterFields
         ): Boolean {
-            return oldItem.results == newItem.results
+            return oldItem.name == newItem.name
         }
     }
 
@@ -55,10 +53,10 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
     }
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
-        val getCharactersApiModel = getItem(position)
+        val character = getItem(position)
+        holder.bind(character)
         holder.itemView.setOnClickListener {
-            onClickListener.onClick(getCharactersApiModel.results[position])
-            holder.bind(getCharactersApiModel.results[position])
+            onClickListener.onClick(character)
         }
     }
 

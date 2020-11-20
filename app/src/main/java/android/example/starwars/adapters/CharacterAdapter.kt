@@ -15,10 +15,6 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
 
     /**var characterList = List<CharacterFields>()
 
-    private fun <T> List(): List<CharacterFields> {
-        TODO("Not yet implemented")
-    }
-
     fun setData(getCharactersApiModel: GetCharactersApiModel) {
         characterList = getCharactersApiModel.results
         notifyDataSetChanged()

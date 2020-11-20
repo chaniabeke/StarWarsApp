@@ -2,9 +2,7 @@ package android.example.starwars.api
 
 import android.example.starwars.properties.CharacterFields
 import android.example.starwars.properties.GetCharactersApiModel
-import com.squareup.moshi.FromJson
-import com.squareup.moshi.JsonQualifier
-import com.squareup.moshi.ToJson
+import com.squareup.moshi.*
 
 @Retention(AnnotationRetention.RUNTIME)
 @JsonQualifier
@@ -21,4 +19,8 @@ class GetCharactersApiModelJsonAdapter {
     fun toJson(@WrappedGetCharactersApiModel value: List<CharacterFields>): GetCharactersApiModel {
         throw UnsupportedOperationException()
     }
+
+    val moshi: Moshi = Moshi.Builder().add(GetCharactersApiModelJsonAdapter()).build()
+    val adapter: JsonAdapter<GetCharactersApiModel> = moshi.adapter(GetCharactersApiModel::class.java)
+    //val movie = adapter.fromJson(MoviesJson))
 }

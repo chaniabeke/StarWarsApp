@@ -30,7 +30,6 @@ private val retrofit = Retrofit.Builder()
 
 interface StarWarsApiService {
     @GET("people/")
-    /**@WrappedGetCharactersApiModel*/
     suspend fun getAllCharacters(): GetCharactersApiModel
 }
 

@@ -12,14 +12,6 @@ import androidx.recyclerview.widget.RecyclerView
 class CharacterAdapter(val onClickListener: OnClickListener) :
     ListAdapter<CharacterFields, CharacterAdapter.CharacterViewHolder>(DiffCallback) {
 
-    /**var characterList = List<CharacterFields>()
-
-    fun setData(getCharactersApiModel: GetCharactersApiModel) {
-        characterList = getCharactersApiModel.results
-        notifyDataSetChanged()
-    }*/
-
-
     class CharacterViewHolder(private var binding: RecyclerviewItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(characterFields: CharacterFields) {

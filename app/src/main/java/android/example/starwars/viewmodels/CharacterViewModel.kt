@@ -15,9 +15,9 @@ class CharacterViewModel : ViewModel() {
     val characters: LiveData<List<CharacterFields>>
         get() = _characters
 
-    private val _navigateToSelectedProperty = MutableLiveData<CharacterFields>()
+    private val _navigateToSelectedFields = MutableLiveData<CharacterFields>()
     val navigateToSelectedFields: LiveData<CharacterFields>
-        get() = _navigateToSelectedProperty
+        get() = _navigateToSelectedFields
 
     init{
         getAllCharacters()
@@ -31,16 +31,15 @@ class CharacterViewModel : ViewModel() {
                 _characters.value = result.characters
             } catch (e: Exception) {
                 Log.e("Failure: ", e.message, e)
-               // _characters.value = ArrayList()
             }
         }
     }
 
     fun displayPropertyDetails(characterFields: CharacterFields) {
-        _navigateToSelectedProperty.value = characterFields
+        _navigateToSelectedFields.value = characterFields
     }
 
     fun displayPropertyDetailsComplete() {
-        _navigateToSelectedProperty.value = null
+        _navigateToSelectedFields.value = null
     }
 }

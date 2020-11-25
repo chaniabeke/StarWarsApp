@@ -2,7 +2,7 @@ package android.example.starwars.properties
 
 import com.squareup.moshi.Json
 
-data class MovieProperty(
+data class MovieFields(
     @Json(name = "characters")
     val characterUrls: List<String>,
     val created: String,

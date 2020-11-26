@@ -1,4 +1,4 @@
-package android.example.starwars.fragments
+package android.example.starwars.fragments.movies
 
 import android.example.starwars.R
 import android.os.Bundle

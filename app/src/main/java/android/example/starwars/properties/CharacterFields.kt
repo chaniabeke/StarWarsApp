@@ -1,13 +1,20 @@
 package android.example.starwars.properties
 
 import android.os.Parcelable
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
+@Entity(tableName = "character_fields_table")
 @Parcelize
 data class CharacterFields(
+    @PrimaryKey(autoGenerate = true)
+    var characterId: Long = 0L,
+
     @Json(name = "birth_year")
     val birthYear: String,
     val created: String,
@@ -23,7 +30,10 @@ data class CharacterFields(
     @Json(name = "homeworld")
     val homeWorldUrl: String,
     val mass: String,
+
+    @ColumnInfo(name = "character_name")
     val name: String,
+
     @Json(name = "skin_color")
     val skinColor : String,
     @Json(name = "species")
@@ -33,4 +43,5 @@ data class CharacterFields(
     val url: String,
     @Json(name = "vehicles")
     val vehicleUrls: List<String>
+
 ) : Parcelable

@@ -27,7 +27,7 @@ class CharacterViewModel : ViewModel() {
     private fun getAllCharacters(){
         viewModelScope.launch {
             try {
-               val result = StarWarsApi.retrofitService.getAllCharacters()
+               val result = StarWarsApi.retrofitService.getAllCharacters(2)
                 _characters.value = result.characters
             } catch (e: Exception) {
                 Log.e("Failure: ", e.message, e)
@@ -35,11 +35,11 @@ class CharacterViewModel : ViewModel() {
         }
     }
 
-    fun displayPropertyDetails(characterFields: CharacterFields) {
+    fun displayCharacterFieldsDetails(characterFields: CharacterFields) {
         _navigateToSelectedFields.value = characterFields
     }
 
-    fun displayPropertyDetailsComplete() {
+    fun displayCharacterFieldsDetailsComplete() {
         _navigateToSelectedFields.value = null
     }
 }

@@ -16,7 +16,6 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(characterFields: CharacterFields) {
             binding.character = characterFields
-
         }
     }
 

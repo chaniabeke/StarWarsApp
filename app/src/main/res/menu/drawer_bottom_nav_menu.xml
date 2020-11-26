@@ -12,8 +12,8 @@
         android:title="Characters" />
 
     <item
-        android:id="@+id/planetsFragment"
-        android:icon="@drawable/ic_baseline_brightness_1_24"
-        android:title="Planets" />
+        android:id="@+id/favoriteCharactersFragment"
+        android:icon="@drawable/ic_baseline_favorite_border_24"
+        android:title="Favorites" />
 
 </menu>

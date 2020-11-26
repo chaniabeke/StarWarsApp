@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.charactersFragment),
+            setOf(R.id.homeFragment, R.id.charactersFragment, R.id.favoriteCharactersFragment),
             drawer_layout
         )
 
@@ -34,14 +34,14 @@ class MainActivity : AppCompatActivity() {
         nav_view.setupWithNavController(navController)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+   /** override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.drawer_bottom_nav_menu, menu)
         return true
-    }
+    }*/
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+   /** override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
-    }
+    }*/
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

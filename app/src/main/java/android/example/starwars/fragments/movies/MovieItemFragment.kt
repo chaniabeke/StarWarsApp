@@ -1,4 +1,4 @@
-package android.example.starwars.fragments
+package android.example.starwars.fragments.movies
 
 import android.example.starwars.R
 import android.os.Bundle
@@ -15,10 +15,10 @@ class MovieItemFragment : Fragment(R.layout.fragment_movie_item) {
             val action = MovieItemFragmentDirections.actionMovieItemFragmentToCharacterFragment()
             findNavController().navigate(action)
         } */
-        button_planet_item.setOnClickListener {
+      /**  button_planet_item.setOnClickListener {
             val action = MovieItemFragmentDirections.actionMovieItemFragmentToPlanetItemFragment()
             findNavController().navigate(action)
-        }
+        }*/
         button_starship_item.setOnClickListener {
             val action = MovieItemFragmentDirections.actionMovieItemFragmentToStarshipItemFragment()
             findNavController().navigate(action)

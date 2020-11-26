@@ -1,4 +1,4 @@
-package android.example.starwars.fragments
+package android.example.starwars.fragments.characters
 
 import android.example.starwars.databinding.FragmentCharacterItemBinding
 import android.example.starwars.viewmodels.CharacterItemViewModel
@@ -9,14 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 
 class CharacterItemFragment : Fragment() {
-
-   /** private val viewModel: CharacterItemViewModel by lazy {
-        ViewModelProvider(this).get(CharacterItemViewModel::class.java)
-    }*/
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -27,11 +22,9 @@ class CharacterItemFragment : Fragment() {
 
         binding.lifecycleOwner = this
 
-        //binding.viewModel = viewModel
+        val characterFields = CharacterItemFragmentArgs.fromBundle(requireArguments()).selectedCharacter
 
-        val characterfields = CharacterItemFragmentArgs.fromBundle(requireArguments()).selectedCharacter
-
-       val viewModelFactory = CharacterItemViewModelFactory(characterfields, application)
+       val viewModelFactory = CharacterItemViewModelFactory(characterFields, application)
        binding.viewModel = ViewModelProvider(
            this, viewModelFactory).get(CharacterItemViewModel::class.java)
 

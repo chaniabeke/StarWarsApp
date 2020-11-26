@@ -6,19 +6,19 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".fragments.PlanetsFragment">
+    tools:context=".fragments.favorite_characters.FavoriteCharactersFragment">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Planets List Screen"
+        android:text="Characters List Screen"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <Button
-        android:id="@+id/button_planet_item"
+        android:id="@+id/button_character_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="planet" />
+        android:text="character" />
 
 </LinearLayout>

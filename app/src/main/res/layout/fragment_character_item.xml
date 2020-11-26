@@ -10,12 +10,29 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".fragments.CharacterItemFragment">
+            tools:context=".fragments.characters.CharacterItemFragment">
 
          <TextView
+             android:id="@+id/textview_characterItem_name"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:textSize="100dp"
+             android:textSize="25dp"
              android:text="@{viewModel.selectedCharacter.name}"/>
+
+            <TextView
+                android:id="@+id/textview_characterItem_birthYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_characterItem_name"
+                android:textSize="25dp"
+                android:text="@{viewModel.selectedCharacter.birthYear}"/>
+
+            <Button
+                android:id="@+id/button_setFavorite_character_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_characterItem_birthYear"
+                android:text="Make favorite"/>
+
         </RelativeLayout>
 </layout>

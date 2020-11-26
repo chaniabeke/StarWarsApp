@@ -6,7 +6,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".fragments.VehicleItemFragment">
+    tools:context=".fragments.movies.VehicleItemFragment">
 
     <TextView
         android:layout_width="wrap_content"

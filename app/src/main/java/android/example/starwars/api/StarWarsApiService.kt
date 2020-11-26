@@ -8,6 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 private const val BASE_URL = "https://swapi.dev/api/"
 
@@ -30,7 +31,7 @@ private val retrofit = Retrofit.Builder()
 
 interface StarWarsApiService {
     @GET("people/")
-    suspend fun getAllCharacters(): GetCharactersApiModel
+    suspend fun getAllCharacters(@Query("page") page : Int): GetCharactersApiModel
 }
 
 object StarWarsApi {

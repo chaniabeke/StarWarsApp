@@ -1,6 +1,5 @@
-package android.example.starwars.fragments
+package android.example.starwars.fragments.characters
 
-import android.example.starwars.R
 import android.example.starwars.adapters.CharacterAdapter
 import android.example.starwars.databinding.FragmentCharactersBinding
 import android.example.starwars.viewmodels.CharacterViewModel
@@ -13,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
-class CharactersFragment : Fragment(R.layout.fragment_characters) {
+class CharactersFragment : Fragment() {
 
     private val viewModel: CharacterViewModel by lazy {
         ViewModelProvider(this).get(CharacterViewModel::class.java)
@@ -29,7 +28,7 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
         binding.viewModel = viewModel
 
         val adapter = CharacterAdapter(CharacterAdapter.OnClickListener {
-            viewModel.displayPropertyDetails(it)
+            viewModel.displayCharacterFieldsDetails(it)
         })
         binding.characterRecyclerview.adapter = adapter
 
@@ -39,8 +38,12 @@ class CharactersFragment : Fragment(R.layout.fragment_characters) {
 
         viewModel.navigateToSelectedFields.observe(viewLifecycleOwner, Observer {
             if ( null != it ) {
-                this.findNavController().navigate(CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(it))
-                viewModel.displayPropertyDetailsComplete()
+                this.findNavController().navigate(
+                    CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(
+                        it
+                    )
+                )
+                viewModel.displayCharacterFieldsDetailsComplete()
             }
         })
 

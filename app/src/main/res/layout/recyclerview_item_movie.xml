@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="movie"
+            type="android.example.starwars.properties.MovieFields" />
+    </data>
+    <TextView
+        android:id="@+id/textview_character_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="25dp"
+        android:layout_margin="20dp"
+        android:text="@{movie.title}" />
+</layout>

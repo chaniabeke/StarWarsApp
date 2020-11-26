@@ -1,4 +1,4 @@
-package android.example.starwars.viewmodels
+package android.example.starwars.viewmodels.characters
 
 import android.app.Application
 import android.example.starwars.properties.CharacterFields

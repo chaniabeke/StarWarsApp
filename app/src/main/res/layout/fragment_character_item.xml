@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="android.example.starwars.viewmodels.CharacterItemViewModel" />
+            type="android.example.starwars.viewmodels.characters.CharacterItemViewModel" />
     </data>
         <RelativeLayout
             android:layout_width="match_parent"

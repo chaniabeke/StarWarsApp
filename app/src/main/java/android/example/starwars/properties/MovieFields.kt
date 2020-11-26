@@ -1,7 +1,12 @@
 package android.example.starwars.properties
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
+import kotlinx.android.parcel.Parcelize
 
+@JsonClass(generateAdapter = true)
+@Parcelize
 data class MovieFields(
     @Json(name = "characters")
     val characterUrls: List<String>,
@@ -25,4 +30,4 @@ data class MovieFields(
     val url: String,
     @Json(name = "vehicles")
     val vehicleUrls: List<String>
-)
+) : Parcelable

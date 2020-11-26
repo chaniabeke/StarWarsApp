@@ -1,6 +1,7 @@
 package android.example.starwars.api
 
 import android.example.starwars.properties.GetCharactersApiModel
+import android.example.starwars.properties.GetMoviesApiModel
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -32,6 +33,8 @@ private val retrofit = Retrofit.Builder()
 interface StarWarsApiService {
     @GET("people/")
     suspend fun getAllCharacters(@Query("page") page : Int): GetCharactersApiModel
+    @GET("films/")
+    suspend fun getAllMovies() : GetMoviesApiModel
 }
 
 object StarWarsApi {

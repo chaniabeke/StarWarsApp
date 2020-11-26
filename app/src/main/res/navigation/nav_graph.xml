@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_movie_itemFragment_to_speciesItemFragment"
             app:destination="@id/speciesItemFragment" />
+        <argument
+            android:name="selectedMovie"
+            app:argType="android.example.starwars.properties.MovieFields" />
     </fragment>
     <fragment
         android:id="@+id/character_itemFragment"

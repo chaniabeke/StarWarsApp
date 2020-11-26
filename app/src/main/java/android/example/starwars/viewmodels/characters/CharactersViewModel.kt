@@ -1,4 +1,4 @@
-package android.example.starwars.viewmodels
+package android.example.starwars.viewmodels.characters
 
 import android.example.starwars.api.StarWarsApi
 import android.example.starwars.properties.CharacterFields
@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class CharacterViewModel : ViewModel() {
+class CharactersViewModel : ViewModel() {
 
     private val _characters = MutableLiveData<List<CharacterFields>>()
     val characters: LiveData<List<CharacterFields>>

@@ -1,8 +1,8 @@
 package android.example.starwars.fragments.characters
 
 import android.example.starwars.databinding.FragmentCharacterItemBinding
-import android.example.starwars.viewmodels.CharacterItemViewModel
-import android.example.starwars.viewmodels.CharacterItemViewModelFactory
+import android.example.starwars.viewmodels.characters.CharacterItemViewModel
+import android.example.starwars.viewmodels.characters.CharacterItemViewModelFactory
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -2,8 +2,6 @@ package android.example.starwars
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -33,15 +31,6 @@ class MainActivity : AppCompatActivity() {
         bottom_nav.setupWithNavController(navController)
         nav_view.setupWithNavController(navController)
     }
-
-   /** override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.drawer_bottom_nav_menu, menu)
-        return true
-    }*/
-
-   /** override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
-    }*/
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

@@ -1,7 +1,6 @@
 package android.example.starwars.viewmodels.movies
 
 import android.example.starwars.api.StarWarsApi
-import android.example.starwars.properties.CharacterFields
 import android.example.starwars.properties.MovieFields
 import android.util.Log
 import androidx.lifecycle.LiveData

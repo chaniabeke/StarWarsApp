@@ -21,14 +21,10 @@ data class CharacterFields(
     val edited: String,
     @Json(name = "eye_color")
     val eyeColor: String,
-    @Json(name = "films")
-    val movieUrls: List<String>,
     val gender: String,
     @Json(name = "hair_color")
     val hairColor: String,
     val height: String,
-    @Json(name = "homeworld")
-    val homeWorldUrl: String,
     val mass: String,
 
     @ColumnInfo(name = "character_name")
@@ -36,12 +32,4 @@ data class CharacterFields(
 
     @Json(name = "skin_color")
     val skinColor : String,
-    @Json(name = "species")
-    val specieUrls: List<String>,
-    @Json(name = "starships")
-    val starShipUrls: List<String>,
-    val url: String,
-    @Json(name = "vehicles")
-    val vehicleUrls: List<String>
-
 ) : Parcelable

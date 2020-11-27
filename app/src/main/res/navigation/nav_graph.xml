@@ -19,18 +19,6 @@
         android:name="android.example.starwars.fragments.movies.MovieItemFragment"
         android:label="Movie"
         tools:layout="@layout/fragment_movie_item" >
-        <action
-            android:id="@+id/action_movie_itemFragment_to_characterFragment"
-            app:destination="@id/character_itemFragment" />
-        <action
-            android:id="@+id/action_movie_itemFragment_to_starshipItemFragment"
-            app:destination="@id/starshipItemFragment" />
-        <action
-            android:id="@+id/action_movie_itemFragment_to_vehicleItemFragment"
-            app:destination="@id/vehicleItemFragment" />
-        <action
-            android:id="@+id/action_movie_itemFragment_to_speciesItemFragment"
-            app:destination="@id/speciesItemFragment" />
         <argument
             android:name="selectedMovie"
             app:argType="android.example.starwars.properties.MovieFields" />
@@ -54,21 +42,6 @@
             app:destination="@id/character_itemFragment" />
     </fragment>
     <fragment
-        android:id="@+id/starshipItemFragment"
-        android:name="android.example.starwars.fragments.movies.StarshipItemFragment"
-        android:label="fragment_starship_item"
-        tools:layout="@layout/fragment_starship_item" />
-    <fragment
-        android:id="@+id/vehicleItemFragment"
-        android:name="android.example.starwars.fragments.movies.VehicleItemFragment"
-        android:label="fragment_vehicle_item"
-        tools:layout="@layout/fragment_vehicle_item" />
-    <fragment
-        android:id="@+id/speciesItemFragment"
-        android:name="android.example.starwars.fragments.movies.SpeciesItemFragment"
-        android:label="fragment_species_item"
-        tools:layout="@layout/fragment_species_item" />
-    <fragment
         android:id="@+id/favoriteCharactersFragment"
         android:name="android.example.starwars.fragments.favorite_characters.FavoriteCharactersFragment"
         android:label="My Favorite Characters"
@@ -76,13 +49,14 @@
         <action
             android:id="@+id/action_favoriteCharactersFragment_to_favoriteCharactersItemFragment"
             app:destination="@id/favoriteCharactersItemFragment" />
-        <argument
-            android:name="selectedCharacter"
-            app:argType="android.example.starwars.properties.CharacterFields" />
     </fragment>
     <fragment
         android:id="@+id/favoriteCharactersItemFragment"
         android:name="android.example.starwars.fragments.favorite_characters.FavoriteCharactersItemFragment"
         android:label="Character"
-        tools:layout="@layout/fragment_favorite_character_item" />
+        tools:layout="@layout/fragment_favorite_character_item">
+    <argument
+        android:name="selectedCharacter"
+        app:argType="android.example.starwars.properties.CharacterFields" />
+    </fragment>
 </navigation>

@@ -39,21 +39,12 @@ class CharactersFragment : Fragment() {
         viewModel.navigateToSelectedFields.observe(viewLifecycleOwner, Observer {
             if ( null != it ) {
                 this.findNavController().navigate(
-                    CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(
-                        it
-                    )
+                    CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(it)
                 )
                 viewModel.displayCharacterFieldsDetailsComplete()
             }
         })
 
         return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        /**button_character_item.setOnClickListener {
-            val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment()
-            findNavController().navigate(action)
-        }*/
     }
 }

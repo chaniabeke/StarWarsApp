@@ -2,6 +2,8 @@ package android.example.starwars.viewmodels.characters
 
 import android.example.starwars.api.StarWarsApi
 import android.example.starwars.properties.CharacterFields
+import android.example.starwars.properties.GetCharactersApiModel
+import android.example.starwars.properties.GetMoviesApiModel
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -27,8 +29,15 @@ class CharactersViewModel : ViewModel() {
     private fun getAllCharacters(){
         viewModelScope.launch {
             try {
-               val result = StarWarsApi.retrofitService.getAllCharacters(2)
-                _characters.value = result.characters
+                var charactersList = listOf<CharacterFields>()
+                var getCharactersApiModel : GetCharactersApiModel
+                var index : Int = 1
+                do{
+                    getCharactersApiModel  = StarWarsApi.retrofitService.getAllCharacters(index)
+                    charactersList += getCharactersApiModel.characters
+                    index ++
+                }while (getCharactersApiModel.next != null)
+                _characters.value = charactersList
             } catch (e: Exception) {
                 Log.e("Failure: ", e.message, e)
             }

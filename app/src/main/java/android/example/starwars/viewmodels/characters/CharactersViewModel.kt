@@ -29,15 +29,19 @@ class CharactersViewModel : ViewModel() {
     private fun getAllCharacters(){
         viewModelScope.launch {
             try {
+
                 var charactersList = listOf<CharacterFields>()
                 var getCharactersApiModel : GetCharactersApiModel
                 var index : Int = 1
+
                 do{
                     getCharactersApiModel  = StarWarsApi.retrofitService.getAllCharacters(index)
                     charactersList += getCharactersApiModel.characters
                     index ++
                 }while (getCharactersApiModel.next != null)
+
                 _characters.value = charactersList
+
             } catch (e: Exception) {
                 Log.e("Failure: ", e.message, e)
             }

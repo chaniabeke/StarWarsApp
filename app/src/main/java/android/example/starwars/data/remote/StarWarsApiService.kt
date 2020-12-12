@@ -35,7 +35,7 @@ private val retrofit = Retrofit.Builder()
 interface StarWarsApiService {
 
     @GET("people/")
-    suspend fun getAllCharacters(@Query("page") page : Int): GetCharactersApiModel
+    suspend fun getAllCharacters(@Query("page") page : Int): Response<GetCharactersApiModel>
 
     @GET("films/")
     suspend fun getAllMovies() : Response<GetMoviesApiModel>

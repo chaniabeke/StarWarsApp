@@ -60,7 +60,6 @@ class MovieAdapter(val onClickListener: OnClickListener) :
        Glide
            .with(holder.itemView.context)
            .load(image)
-           .centerCrop()
            .into(holder.imageView);
     }
 

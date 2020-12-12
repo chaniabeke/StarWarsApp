@@ -1,5 +1,6 @@
 package android.example.starwars.fragments.movies
 
+import android.example.starwars.AutoFitGridLayoutManager
 import android.example.starwars.adapters.MovieAdapter
 import android.example.starwars.databinding.FragmentHomeBinding
 import android.example.starwars.repos.RepositoryUtils
@@ -35,18 +36,21 @@ class HomeFragment : Fragment() {
 
         binding.moviesRecyclerview.adapter = adapter
 
+        val manager = AutoFitGridLayoutManager(this.requireContext(), 600)
+        binding.moviesRecyclerview.layoutManager = manager
+
         viewModel.movies.observe(viewLifecycleOwner, Observer {
             it?.let { resource ->
                when(resource.status){
                    Status.SUCCESS -> {
-                       binding.progressBar.visibility = View.GONE
+                       binding.progressBarMovies.visibility = View.GONE
                        adapter.submitList(resource.data)
                    }
                    Status.LOADING -> {
-                       binding.progressBar.visibility = View.VISIBLE
+                       binding.progressBarMovies.visibility = View.VISIBLE
                    }
                    Status.ERROR -> {
-                       binding.progressBar.visibility = View.GONE
+                       binding.progressBarMovies.visibility = View.GONE
                        //TODO Error
                    }
                }

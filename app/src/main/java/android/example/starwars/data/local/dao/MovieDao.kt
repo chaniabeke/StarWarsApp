@@ -1,4 +1,4 @@
-package android.example.starwars.data.local
+package android.example.starwars.data.local.dao
 
 import android.example.starwars.properties.GetMoviesApiModel
 import android.example.starwars.properties.MovieFields

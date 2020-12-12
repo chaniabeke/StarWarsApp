@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="android.example.starwars.viewmodels.characters.CharacterItemViewModel" />
+            name="selectedCharacter"
+            type="android.example.starwars.properties.CharacterFields" />
     </data>
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,7 +17,7 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:textSize="25dp"
-             android:text="@{viewModel.selectedCharacter.name}"/>
+             android:text="@{selectedCharacter.name}"/>
 
             <TextView
                 android:id="@+id/textview_characterItem_birthYear"
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/textview_characterItem_name"
                 android:textSize="25dp"
-                android:text="@{viewModel.selectedCharacter.birthYear}"/>
+                android:text="@{selectedCharacter.birthYear}"/>
 
             <Button
                 android:id="@+id/button_setFavorite_character_item"

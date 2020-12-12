@@ -21,7 +21,6 @@
             android:padding="25dp"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -30,7 +29,7 @@
             tools:listitem="@layout/recyclerview_item_movie" />
 
         <ProgressBar
-            android:id="@+id/progress_bar"
+            android:id="@+id/progress_bar_movies"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -29,8 +29,8 @@
         android:label="Character"
         tools:layout="@layout/fragment_character_item" >
         <argument
-            android:name="selectedCharacter"
-            app:argType="android.example.starwars.properties.CharacterFields" />
+            android:name="characterId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/charactersFragment"

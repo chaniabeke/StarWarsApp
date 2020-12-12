@@ -9,11 +9,11 @@ import com.squareup.moshi.JsonClass
 import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
-@Entity(tableName = "character_fields_table")
+@Entity(tableName = "characters")
 @Parcelize
 data class CharacterFields(
     @PrimaryKey(autoGenerate = true)
-    var characterId: Long = 0L,
+    var characterId: Int = 0,
 
     @Json(name = "birth_year")
     val birthYear: String,

@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:context=".fragments.favorite_characters.FavoriteCharactersItemFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Character item Screen"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    <data>
+        <variable
+            name="viewModel"
+            type="android.example.starwars.viewmodels.favorite_characters.FavoriteCharacterItemViewModel" />
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.characters.CharacterItemFragment">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/textview_characterItem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:text="@{viewModel.selectedFavoriteCharacter.name}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_birthYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_name"
+            android:textSize="25dp"
+            android:text="@{viewModel.selectedFavoriteCharacter.birthYear}"/>
+
+    </RelativeLayout>
+</layout>

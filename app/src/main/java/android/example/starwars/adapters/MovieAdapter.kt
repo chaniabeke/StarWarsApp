@@ -1,9 +1,8 @@
 package android.example.starwars.adapters
 
-import android.example.starwars.R
 import android.example.starwars.databinding.RecyclerviewItemMovieBinding
 import android.example.starwars.properties.MovieFields
-import android.example.starwars.util.getImage
+import android.example.starwars.utils.getImage
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -18,7 +17,7 @@ class MovieAdapter(val onClickListener: OnClickListener) :
     class MovieViewHolder(private var binding: RecyclerviewItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        val imageView : ImageView
+      val imageView : ImageView
             get() = binding.imageviewMovieposter
 
         fun bind(movieFields: MovieFields) {
@@ -31,14 +30,14 @@ class MovieAdapter(val onClickListener: OnClickListener) :
             oldItem: MovieFields,
             newItem: MovieFields
         ): Boolean {
-            return oldItem === newItem
+            return oldItem.episodeId === newItem.episodeId
         }
 
         override fun areContentsTheSame(
             oldItem: MovieFields,
             newItem: MovieFields
         ): Boolean {
-            return oldItem.episodeId == newItem.episodeId
+            return oldItem.edited == newItem.edited
         }
     }
 
@@ -57,7 +56,7 @@ class MovieAdapter(val onClickListener: OnClickListener) :
             onClickListener.onClick(movie)
         }
 
-      val image : Int = getImage(movie.episodeId)
+  val image : Int = getImage(movie.episodeId)
        Glide
            .with(holder.itemView.context)
            .load(image)

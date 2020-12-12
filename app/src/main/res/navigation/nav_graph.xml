@@ -20,8 +20,8 @@
         android:label="Movie"
         tools:layout="@layout/fragment_movie_item" >
         <argument
-            android:name="selectedMovie"
-            app:argType="android.example.starwars.properties.MovieFields" />
+            android:name="movieId"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/character_itemFragment"

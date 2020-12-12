@@ -1,12 +1,10 @@
-package android.example.starwars.util
+package android.example.starwars.utils
 
 import android.example.starwars.R
-import android.widget.ImageView
-import com.bumptech.glide.annotation.GlideModule
-import com.bumptech.glide.module.AppGlideModule
 
 
 fun getImage(episodeId : Int) : Int {
+    //TODO default image
     var image : Int = R.drawable.img_movie_1
     when (episodeId) {
         1 -> image = R.drawable.img_movie_1

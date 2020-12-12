@@ -16,6 +16,8 @@ buildscript {
         version_recyclerview = '1.2.0-alpha06'
         interceptor_version = "4.9.0"
         okhttp_version = "4.9.0"
+        //version_lottie = "2.5.0"
+        room_version = "2.2.5"
     }
 
     repositories {

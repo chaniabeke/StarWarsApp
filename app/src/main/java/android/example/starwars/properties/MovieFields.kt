@@ -1,17 +1,18 @@
 package android.example.starwars.properties
 
-import android.os.Parcelable
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
-@Parcelize
+@Entity(tableName = "movies")
 data class MovieFields(
     val created: String,
     val director: String,
     val edited: String,
     @Json(name = "episode_id")
+    @PrimaryKey
     val episodeId: Int,
     @Json(name = "opening_crawl")
     val openingCrawl: String,
@@ -19,4 +20,4 @@ data class MovieFields(
     @Json(name = "release_date")
     val releaseDate: String,
     val title: String,
-) : Parcelable
+)

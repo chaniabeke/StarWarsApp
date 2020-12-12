@@ -31,7 +31,7 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
             oldItem: CharacterFields,
             newItem: CharacterFields
         ): Boolean {
-            return oldItem.name == newItem.name
+            return oldItem.edited == newItem.edited
         }
     }
 

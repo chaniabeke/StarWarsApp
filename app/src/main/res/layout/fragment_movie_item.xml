@@ -4,9 +4,13 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="android.example.starwars.viewmodels.movies.MovieItemViewModel" />
+            name="selectedMovie"
+            type="android.example.starwars.properties.MovieFields" />
     </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +21,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25dp"
-            android:text="@{viewModel.selectedMovie.title}"/>
+            android:textColor="@color/colorWhite"
+            android:textAlignment="center"
+            android:text="@{selectedMovie.title}"/>
+
+        <TextView
+            android:id="@+id/textview_movieItem_releaseDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_below="@id/textview_movieItem_name"
+            android:layout_alignRight="@id/textview_movieItem_name"
+            android:textSize="15dp"
+            android:textColor="@color/colorWhite"
+            android:text="@{selectedMovie.releaseDate}"/>
+
+        <TextView
+            android:id="@+id/textview_movieItem_openingCrawl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textAlignment="center"
+            android:layout_below="@id/textview_movieItem_releaseDate"
+            android:textSize="20dp"
+            android:textColor="@color/colorWhite"
+            android:text="@{selectedMovie.openingCrawl}"/>
 
     </RelativeLayout>
+    </ScrollView>
 </layout>

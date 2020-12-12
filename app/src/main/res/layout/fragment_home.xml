@@ -18,7 +18,7 @@
             android:id="@+id/movies_recyclerview"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:padding="15dp"
+            android:padding="25dp"
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2"
@@ -28,6 +28,17 @@
             app:layout_constraintTop_toTopOf="parent"
             android:background="@color/colorPrimary"
             tools:listitem="@layout/recyclerview_item_movie" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:indeterminate="true"
+            android:visibility="gone"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

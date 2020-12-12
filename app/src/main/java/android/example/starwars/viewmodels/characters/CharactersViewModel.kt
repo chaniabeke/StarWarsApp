@@ -1,6 +1,6 @@
 package android.example.starwars.viewmodels.characters
 
-import android.example.starwars.api.StarWarsApi
+import android.example.starwars.data.remote.StarWarsApi
 import android.example.starwars.properties.CharacterFields
 import android.example.starwars.properties.GetCharactersApiModel
 import android.example.starwars.properties.GetMoviesApiModel
@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-class CharactersViewModel : ViewModel() {
+class CharactersViewModel() : ViewModel() {
 
     private val _characters = MutableLiveData<List<CharacterFields>>()
     val characters: LiveData<List<CharacterFields>>
@@ -35,7 +35,7 @@ class CharactersViewModel : ViewModel() {
                 var index : Int = 1
 
                 do{
-                    getCharactersApiModel  = StarWarsApi.retrofitService.getAllCharacters(index)
+                    getCharactersApiModel  = StarWarsApi.apiService.getAllCharacters(index)
                     charactersList += getCharactersApiModel.characters
                     index ++
                 }while (getCharactersApiModel.next != null)

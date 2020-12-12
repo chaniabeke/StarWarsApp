@@ -1,11 +1,13 @@
-package android.example.starwars.api
+package android.example.starwars.data.remote
 
 import android.example.starwars.properties.GetCharactersApiModel
 import android.example.starwars.properties.GetMoviesApiModel
+import android.example.starwars.utils.Resource
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
@@ -31,12 +33,15 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 interface StarWarsApiService {
+
     @GET("people/")
     suspend fun getAllCharacters(@Query("page") page : Int): GetCharactersApiModel
+
     @GET("films/")
-    suspend fun getAllMovies() : GetMoviesApiModel
+    suspend fun getAllMovies() : Response<GetMoviesApiModel>
+
 }
 
 object StarWarsApi {
-    val retrofitService: StarWarsApiService by lazy { retrofit.create(StarWarsApiService::class.java) }
+    val apiService: StarWarsApiService by lazy { retrofit.create(StarWarsApiService::class.java) }
 }

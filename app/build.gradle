@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'org.jetbrains.dokka'
+
+
 
 android {
     compileSdkVersion 30
@@ -31,9 +34,15 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     //MVVM databinding
     dataBinding {
         enabled = true
+    }
+
+    dokka {
+        outputFormat = 'html'
+        outputDirectory = "$buildDir/docs"
     }
 
     dependencies {
@@ -82,6 +91,9 @@ android {
 
         //Lottie
         //Implementation "com.airbnb.android:lottie:$version_lottie"
+
+        //Dokka
+        //classpath "org.jetbrains.dokka:dokka-gradle-plugin:$version_dokka"
 
         testImplementation 'junit:junit:4.12'
         androidTestImplementation 'androidx.test.ext:junit:1.1.2'

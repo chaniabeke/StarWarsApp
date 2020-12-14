@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -7,44 +8,49 @@
             name="selectedMovie"
             type="android.example.starwars.properties.MovieFields" />
     </data>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary">
+        android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".fragments.movies.MovieItemFragment">
+        tools:context=".fragments.movies.MovieItemFragment"
+        android:orientation="horizontal"
+        android:theme="@style/AppTheme"
+        android:layout_margin="20dp">
 
         <TextView
             android:id="@+id/textview_movieItem_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:textColor="@color/colorWhite"
-            android:textAlignment="center"
+            android:theme="@style/AppTheme.Headline1.StarWarsFont"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
             android:text="@{selectedMovie.title}"/>
 
         <TextView
-            android:id="@+id/textview_movieItem_releaseDate"
-            android:layout_width="match_parent"
+            android:id="@+id/textview_movieItem_name_symbols"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:theme="@style/AppTheme.Headline1.SymbolsFont"
             android:layout_below="@id/textview_movieItem_name"
-            android:layout_alignRight="@id/textview_movieItem_name"
-            android:textSize="15dp"
-            android:textColor="@color/colorWhite"
-            android:text="@{selectedMovie.releaseDate}"/>
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="@{selectedMovie.title}"/>
+
 
         <TextView
             android:id="@+id/textview_movieItem_openingCrawl"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
             android:textAlignment="center"
-            android:layout_below="@id/textview_movieItem_releaseDate"
-            android:textSize="20dp"
-            android:textColor="@color/colorWhite"
+            android:layout_below="@id/textview_movieItem_name_symbols"
+            android:layout_marginBottom="50dp"
             android:text="@{selectedMovie.openingCrawl}"/>
 
     </RelativeLayout>

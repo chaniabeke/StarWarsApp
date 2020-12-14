@@ -10,11 +10,7 @@ import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "characters")
-@Parcelize
 data class CharacterFields(
-    @PrimaryKey(autoGenerate = true)
-    var characterId: Int = 0,
-
     @Json(name = "birth_year")
     val birthYear: String,
     val created: String,
@@ -32,4 +28,7 @@ data class CharacterFields(
 
     @Json(name = "skin_color")
     val skinColor : String,
-) : Parcelable
+
+    @PrimaryKey
+    val url : String,
+)

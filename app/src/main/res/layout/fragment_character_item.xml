@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -7,32 +8,179 @@
             name="selectedCharacter"
             type="android.example.starwars.properties.CharacterFields" />
     </data>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".fragments.characters.CharacterItemFragment">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-         <TextView
-             android:id="@+id/textview_characterItem_name"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:textSize="25dp"
-             android:text="@{selectedCharacter.name}"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".fragments.characters.CharacterItemFragment"
+        android:orientation="horizontal"
+        android:theme="@style/AppTheme"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/textview_characterItem_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline1.StarWarsFont"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="@{selectedCharacter.name}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_name_symbols"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline1.SymbolsFont"
+            android:layout_below="@id/textview_characterItem_name"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="50dp"
+            android:text="@{selectedCharacter.name}"/>
 
             <TextView
-                android:id="@+id/textview_characterItem_birthYear"
+                android:id="@+id/textview_characterItem_genderTag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textview_characterItem_name"
-                android:textSize="25dp"
-                android:text="@{selectedCharacter.birthYear}"/>
+                android:theme="@style/AppTheme.Headline3"
+                android:layout_below="@id/textview_characterItem_name_symbols"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/character_gender_tag"/>
 
-            <Button
-                android:id="@+id/button_setFavorite_character_item"
+            <TextView
+                android:id="@+id/textview_characterItem_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/textview_characterItem_birthYear"
-                android:text="Make favorite"/>
+                android:layout_below="@id/textview_characterItem_name_symbols"
+                android:layout_toRightOf="@id/textview_characterItem_genderTag"
+                android:layout_marginBottom="20dp"
+                android:text="@{selectedCharacter.gender}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_birthYearTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_genderTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_birthYear_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_birthYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_genderTag"
+            android:layout_toRightOf="@id/textview_characterItem_birthYearTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.birthYear}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_heightTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_birthYearTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_height_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_height"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_birthYearTag"
+            android:layout_toRightOf="@id/textview_characterItem_heightTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.height}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_massTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_heightTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_mass_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_mass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_heightTag"
+            android:layout_toRightOf="@id/textview_characterItem_massTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.mass}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_eyeColorTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_massTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_eyeColor_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_eyeColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_massTag"
+            android:layout_toRightOf="@id/textview_characterItem_eyeColorTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.eyeColor}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_hairColorTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_eyeColorTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_hairColor_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_hairColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_eyeColorTag"
+            android:layout_toRightOf="@id/textview_characterItem_hairColorTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.hairColor}"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_skinColorTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.Headline3"
+            android:layout_below="@id/textview_characterItem_hairColorTag"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="@string/character_skinColor_tag"/>
+
+        <TextView
+            android:id="@+id/textview_characterItem_skinColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textview_characterItem_hairColorTag"
+            android:layout_toRightOf="@id/textview_characterItem_skinColorTag"
+            android:layout_marginBottom="20dp"
+            android:text="@{selectedCharacter.skinColor}"/>
 
         </RelativeLayout>
+    </ScrollView>
 </layout>

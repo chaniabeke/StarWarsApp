@@ -11,7 +11,7 @@ class CharacterRepository(
     private val characterRemoteDataSource: CharacterRemoteDataSource
 ) {
 
-    fun getCharacter(id: Int) = characterLocalDataSource.getCharacter(id)
+    fun getCharacter(id: String) = characterLocalDataSource.getCharacter(id)
 
     fun getAllCharacters() = performGetOperation(
         databaseQuery = {characterLocalDataSource.getCharacters() },

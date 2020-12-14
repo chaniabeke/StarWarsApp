@@ -33,7 +33,7 @@ class CharactersFragment : Fragment() {
         binding.viewModel = viewModel
 
         val adapter = CharacterAdapter(CharacterAdapter.OnClickListener {
-            val directions = CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(it.characterId)
+            val directions = CharactersFragmentDirections.actionCharactersFragmentToCharacterItemFragment(it.url)
             findNavController().navigate(directions)
         })
 

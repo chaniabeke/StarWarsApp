@@ -5,10 +5,7 @@ import android.example.starwars.properties.CharacterFields
 import android.example.starwars.properties.MovieFields
 import android.example.starwars.repos.MovieRepository
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class MovieItemViewModel(private  val repository: MovieRepository) : ViewModel(){

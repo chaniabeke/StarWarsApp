@@ -9,7 +9,7 @@ class CharacterLocalDataSource (private val characterDao: CharacterDao) {
 
     fun getCharacters() = characterDao.getAllCharacters()
 
-    fun getCharacter(id: Int) = characterDao.getCharacter(id)
+    fun getCharacter(id: String) = characterDao.getCharacter(id)
 
     fun saveCharacters(list: List<CharacterFields>){
         characterDao.insertAll((list))

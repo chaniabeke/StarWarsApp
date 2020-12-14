@@ -14,8 +14,8 @@ interface CharacterDao {
     @Query("select * from characters")
     fun getAllCharacters(): LiveData<List<CharacterFields>>
 
-    @Query("select * from characters where characterId=:id")
-    fun getCharacter(id : Int) : LiveData<CharacterFields>
+    @Query("select * from characters where url=:id")
+    fun getCharacter(id : String) : LiveData<CharacterFields>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(list: List<CharacterFields>)

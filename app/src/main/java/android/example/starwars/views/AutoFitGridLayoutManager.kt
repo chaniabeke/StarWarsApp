@@ -1,4 +1,4 @@
-package android.example.starwars
+package android.example.starwars.views
 
 import android.content.Context
 import androidx.recyclerview.widget.GridLayoutManager

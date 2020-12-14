@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.findNavController()
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.homeFragment, R.id.charactersFragment, R.id.favoriteCharactersFragment),
+            setOf(R.id.homeFragment, R.id.charactersFragment),
             drawer_layout
         )
 

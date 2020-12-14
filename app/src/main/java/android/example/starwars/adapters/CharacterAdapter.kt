@@ -24,14 +24,14 @@ class CharacterAdapter(val onClickListener: OnClickListener) :
             oldItem: CharacterFields,
             newItem: CharacterFields
         ): Boolean {
-            return oldItem === newItem
+            return oldItem.url === newItem.url
         }
 
         override fun areContentsTheSame(
             oldItem: CharacterFields,
             newItem: CharacterFields
         ): Boolean {
-            return oldItem.edited == newItem.edited
+            return oldItem == newItem
         }
     }
 

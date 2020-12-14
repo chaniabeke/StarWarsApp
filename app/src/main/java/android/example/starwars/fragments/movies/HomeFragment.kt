@@ -1,6 +1,6 @@
 package android.example.starwars.fragments.movies
 
-import android.example.starwars.AutoFitGridLayoutManager
+import android.example.starwars.views.AutoFitGridLayoutManager
 import android.example.starwars.adapters.MovieAdapter
 import android.example.starwars.databinding.FragmentHomeBinding
 import android.example.starwars.repos.RepositoryUtils

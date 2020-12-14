@@ -27,10 +27,10 @@
         android:id="@+id/character_itemFragment"
         android:name="android.example.starwars.fragments.characters.CharacterItemFragment"
         android:label="Character"
-        tools:layout="@layout/fragment_character_item" >
+        tools:layout="@layout/fragment_character_item">
         <argument
             android:name="characterId"
-            app:argType="integer" />
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/charactersFragment"
@@ -40,23 +40,5 @@
         <action
             android:id="@+id/action_charactersFragment_to_character_itemFragment"
             app:destination="@id/character_itemFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/favoriteCharactersFragment"
-        android:name="android.example.starwars.fragments.favorite_characters.FavoriteCharactersFragment"
-        android:label="My Favorite Characters"
-        tools:layout="@layout/fragment_favorite_characters">
-        <action
-            android:id="@+id/action_favoriteCharactersFragment_to_favoriteCharactersItemFragment"
-            app:destination="@id/favoriteCharactersItemFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/favoriteCharactersItemFragment"
-        android:name="android.example.starwars.fragments.favorite_characters.FavoriteCharactersItemFragment"
-        android:label="Character"
-        tools:layout="@layout/fragment_favorite_character_item">
-    <argument
-        android:name="selectedCharacter"
-        app:argType="android.example.starwars.properties.CharacterFields" />
     </fragment>
 </navigation>

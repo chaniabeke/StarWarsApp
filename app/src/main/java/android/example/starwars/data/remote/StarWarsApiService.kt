@@ -26,12 +26,19 @@ private val client = OkHttpClient.Builder()
     .addInterceptor(loggingInterceptor)
     .build()
 
+/**
+ * Use the Retrofit builder to build a retrofit object using a Moshi converter with our Moshi
+ * object.
+ */
 private val retrofit = Retrofit.Builder()
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .baseUrl(BASE_URL)
     .client(client)
     .build()
 
+/**
+ * A interface that has the methods GET HTTP Methods and returns a HTTP response
+ */
 interface StarWarsApiService {
 
     @GET("people/")
@@ -42,6 +49,9 @@ interface StarWarsApiService {
 
 }
 
+/**
+ * A Api object that exposes the lazy-initialized Retrofit service
+ */
 object StarWarsApi {
     val apiService: StarWarsApiService by lazy { retrofit.create(StarWarsApiService::class.java) }
 }

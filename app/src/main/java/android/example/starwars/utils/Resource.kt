@@ -1,5 +1,11 @@
 package android.example.starwars.utils
 
+/**
+ * A generic class that return a Resource object based on the status
+ * @param status (enum)
+ * @param data data object
+ * @param message string with error message
+ */
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
     companion object{
 

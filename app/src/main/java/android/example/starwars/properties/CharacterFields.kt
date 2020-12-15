@@ -1,15 +1,14 @@
 package android.example.starwars.properties
 
-import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import kotlinx.android.parcel.Parcelize
 
 @JsonClass(generateAdapter = true)
 @Entity(tableName = "characters")
+
 data class CharacterFields(
     @Json(name = "birth_year")
     val birthYear: String,

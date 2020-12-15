@@ -1,13 +1,12 @@
 package android.example.starwars.viewmodels.characters
 
-import android.app.Application
-import android.example.starwars.properties.CharacterFields
 import android.example.starwars.repos.CharacterRepository
-import android.example.starwars.repos.MovieRepository
-import android.example.starwars.viewmodels.movies.MovieItemViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
+/**
+ * Simple ViewModel factory that provides the [CharacterRepository] to the ViewModel.
+ */
 class CharacterItemViewModelFactory(
     private val repository: CharacterRepository
 ) : ViewModelProvider.Factory {

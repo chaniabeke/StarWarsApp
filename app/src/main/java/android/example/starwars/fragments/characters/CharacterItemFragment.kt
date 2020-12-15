@@ -1,13 +1,9 @@
 package android.example.starwars.fragments.characters
 
 import android.example.starwars.databinding.FragmentCharacterItemBinding
-import android.example.starwars.databinding.FragmentMovieItemBinding
-import android.example.starwars.fragments.movies.MovieItemFragmentArgs
 import android.example.starwars.repos.RepositoryUtils
 import android.example.starwars.viewmodels.characters.CharacterItemViewModel
 import android.example.starwars.viewmodels.characters.CharacterItemViewModelFactory
-import android.example.starwars.viewmodels.movies.MovieItemViewModel
-import android.example.starwars.viewmodels.movies.MovieItemViewModelFactory
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,6 +13,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 
+/**
+ * This [Fragment] shows the detailed information about a selected item of Star Wars Characters.
+ * It sets this information in the [CharacterItemViewModel], which it gets as a ID
+ * through Jetpack Navigation's SafeArgs.
+ */
 class CharacterItemFragment : Fragment() {
 
     val arguments : CharacterItemFragmentArgs by navArgs()

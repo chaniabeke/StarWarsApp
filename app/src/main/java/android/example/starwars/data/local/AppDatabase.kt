@@ -9,6 +9,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+/**
+ * A database that stores the app's information.
+ * And a global method to get access to the database.
+ */
 @Database(entities = [MovieFields::class, CharacterFields::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 

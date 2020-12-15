@@ -6,6 +6,9 @@ import android.example.starwars.viewmodels.movies.HomeViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
+/**
+ * Simple ViewModel factory that provides the [CharacterRepository] to the ViewModel.
+ */
 class CharactersViewModelFactory(
 private val repository: CharacterRepository
 ) : ViewModelProvider.Factory {

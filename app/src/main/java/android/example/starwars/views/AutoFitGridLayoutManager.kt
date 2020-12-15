@@ -5,6 +5,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 
+/**
+ * Custom GridLayoutManger that sets the columnWidth and automatically sets the spanCount based on the columnWidth
+ * @param context
+ * @param columnWidth
+ */
 class AutoFitGridLayoutManager(context: Context?, columnWidth: Int) :
     GridLayoutManager(context, 1) {
     private var columnWidth = 0

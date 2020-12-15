@@ -3,6 +3,9 @@ package android.example.starwars.data
 import android.example.starwars.utils.Resource
 import retrofit2.Response
 
+/**
+ * Basedatasource that returns a resource if the getResult call is successfull and doesn't have network errors
+ */
 abstract class BaseDataSource {
 
     protected suspend fun <T> getResult(call: suspend () -> Response<T>): Resource<T> {

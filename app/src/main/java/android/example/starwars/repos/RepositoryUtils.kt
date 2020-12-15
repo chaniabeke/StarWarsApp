@@ -8,6 +8,9 @@ import android.example.starwars.data.remote.CharacterRemoteDataSource
 import android.example.starwars.data.remote.MovieRemoteDataSource
 import android.example.starwars.data.remote.StarWarsApi
 
+/**
+ * Creates a repository object with a local and remote dataSource
+ */
 class RepositoryUtils {
     companion object{
         fun createMovieRepository(context: Context) : MovieRepository{

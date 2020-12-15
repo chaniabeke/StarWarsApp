@@ -2,10 +2,12 @@ package android.example.starwars.utils
 
 import android.example.starwars.R
 
-
+/**
+ * Returns the fitting image based on episodeId
+ * @param episodeId
+ */
 fun getImage(episodeId : Int) : Int {
-    //TODO default image
-    var image : Int = R.drawable.episode_1
+    var image : Int = R.drawable.ic_baseline_movie_24
     when (episodeId) {
         1 -> image = R.drawable.episode_1
         2 -> image = R.drawable.episode_2

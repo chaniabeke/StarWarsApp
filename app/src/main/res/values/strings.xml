@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Star Wars</string>
+
     <string name="character_gender_tag">Gender: </string>
     <string name="character_birthYear_tag">BirthYear: </string>
     <string name="character_mass_tag">Mass: </string>
@@ -7,4 +8,5 @@
     <string name="character_eyeColor_tag">Eye Color: </string>
     <string name="character_hairColor_tag">Hair Color: </string>
     <string name="character_skinColor_tag">Skin Color: </string>
+
 </resources>

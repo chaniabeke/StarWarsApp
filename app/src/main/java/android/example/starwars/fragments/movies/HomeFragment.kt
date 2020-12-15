@@ -11,13 +11,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 
+/**
+ * This fragment shows the movies of the star wars API.
+ */
 class HomeFragment : Fragment() {
 
+    /**
+     * Inflates the layout with Data Binding, sets its lifecycle owner to the [HomeFragment]
+     * to enable Data Binding to observe LiveData, and sets up the RecyclerView with an adapter.
+     * It also observes the movies Resource List in the viewmodel
+     */
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
@@ -36,7 +45,7 @@ class HomeFragment : Fragment() {
 
         binding.moviesRecyclerview.adapter = adapter
 
-        val manager = AutoFitGridLayoutManager(this.requireContext(), 600)
+        val manager = AutoFitGridLayoutManager(this.requireContext(), 500)
         binding.moviesRecyclerview.layoutManager = manager
 
         viewModel.movies.observe(viewLifecycleOwner, Observer {
@@ -51,7 +60,7 @@ class HomeFragment : Fragment() {
                    }
                    Status.ERROR -> {
                        binding.progressBarMovies.visibility = View.GONE
-                       //TODO Error
+                       Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                    }
                }
             }

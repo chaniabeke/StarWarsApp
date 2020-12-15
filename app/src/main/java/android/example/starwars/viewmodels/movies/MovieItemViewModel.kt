@@ -1,13 +1,13 @@
 package android.example.starwars.viewmodels.movies
 
-import android.app.Application
-import android.example.starwars.properties.CharacterFields
 import android.example.starwars.properties.MovieFields
 import android.example.starwars.repos.MovieRepository
-import android.util.Log
 import androidx.lifecycle.*
-import kotlinx.coroutines.launch
 
+/**
+ * The [ViewModel] that is attached to [MoviesFragment].
+ * @param repository
+ */
 class MovieItemViewModel(private  val repository: MovieRepository) : ViewModel(){
 
     private lateinit var _selectedMovie : LiveData<MovieFields>
@@ -15,6 +15,10 @@ class MovieItemViewModel(private  val repository: MovieRepository) : ViewModel()
     val selectedMovie: LiveData<MovieFields>
         get() = _selectedMovie
 
+    /**
+     * update [_selectedMovie] with the returned [MovieFields] from method
+     * @param Int
+     */
     fun updateMovie(id: Int){
         _selectedMovie = repository.getMovie(id)
     }

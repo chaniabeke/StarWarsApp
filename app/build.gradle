@@ -40,7 +40,7 @@ android {
 
     dokka {
         outputFormat = 'html'
-        outputDirectory = "$buildDir/docs"
+        outputDirectory = "$buildDir/javadoc"
     }
 
     dependencies {

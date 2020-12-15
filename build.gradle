@@ -17,7 +17,8 @@ buildscript {
         interceptor_version = '4.9.0'
         okhttp_version = '4.9.0'
         room_version = '2.2.5'
-        dokka_version = '0.10.0'
+
+        dokka_version = '0.9.17'
     }
 
     repositories {
